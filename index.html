@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Eagle Solutions - Exterior & Interior CNC Works</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,10 +17,11 @@
         .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
                 url('assets/del2.jpeg') no-repeat center center;
-    background-size: 100% auto;   /* 👈 shrink the image width */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 85vh;
+    min-height: 500px;
 }
 
         
@@ -87,6 +88,22 @@
         
         .nav-link:hover::after {
             width: 100%;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+                padding: 0 1rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+            .gallery-item img {
+                aspect-ratio: 1/1;
+            }
+            #contact .flex-col {
+                padding: 0 1rem;
+            }
         }
     </style>
 </head>
@@ -206,7 +223,7 @@
     <div class="container mx-auto px-4">
         <h2 class="text-3xl font-bold text-center text-amber-900 mb-12">Our Recent Works</h2>
         
-        <div class="relative h-[70vh] w-[60%] mx-auto overflow-hidden rounded-xl shadow-lg bg-black">
+        <div class="relative h-[50vh] md:h-[70vh] w-full md:w-[60%] mx-auto overflow-hidden rounded-xl shadow-lg bg-black">
             <!-- Slides -->
             <div class="slide active flex items-center justify-center h-full w-full">
                 <img src="assets/aura.jpg" 
@@ -394,7 +411,14 @@
                     <img src="assets/mirror2.jpeg" 
                          alt="Gallery Image 8" class="w-full aspect-[3/2] object-cover">
                 </div>
-                
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/gypsun.jpeg" 
+                         alt="Gallery Image 8" class="w-full aspect-[3/2] object-cover">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="assets/mirror2.jpeg" 
+                         alt="Gallery Image 8" class="w-full aspect-[3/2] object-cover">
+                </div>
             </div>
             
             <div class="text-center mt-8">
